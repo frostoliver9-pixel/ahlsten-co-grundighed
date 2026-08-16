@@ -61,11 +61,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button asChild size="sm" className="hidden sm:inline-flex">
+          <Button asChild size="sm">
             <Link to="/kontakt" hash="tilbud">
               {hero.primaryCta}
             </Link>
           </Button>
+
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
