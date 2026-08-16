@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CookiepolitikRouteImport } from './routes/cookiepolitik'
+import { Route as HandelsbetingelserRouteImport } from './routes/handelsbetingelser'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as OmOsRouteImport } from './routes/om-os'
+import { Route as PriserRouteImport } from './routes/priser'
+import { Route as PrivatlivspolitikRouteImport } from './routes/privatlivspolitik'
+import { Route as YdelserRouteImport } from './routes/ydelser'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookiepolitikRoute = CookiepolitikRouteImport.update({
+  id: '/cookiepolitik',
+  path: '/cookiepolitik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HandelsbetingelserRoute = HandelsbetingelserRouteImport.update({
+  id: '/handelsbetingelser',
+  path: '/handelsbetingelser',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OmOsRoute = OmOsRouteImport.update({
+  id: '/om-os',
+  path: '/om-os',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PriserRoute = PriserRouteImport.update({
+  id: '/priser',
+  path: '/priser',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivatlivspolitikRoute = PrivatlivspolitikRouteImport.update({
+  id: '/privatlivspolitik',
+  path: '/privatlivspolitik',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const YdelserRoute = YdelserRouteImport.update({
+  id: '/ydelser',
+  path: '/ydelser',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cookiepolitik': typeof CookiepolitikRoute
+  '/handelsbetingelser': typeof HandelsbetingelserRoute
+  '/kontakt': typeof KontaktRoute
+  '/om-os': typeof OmOsRoute
+  '/priser': typeof PriserRoute
+  '/privatlivspolitik': typeof PrivatlivspolitikRoute
+  '/ydelser': typeof YdelserRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cookiepolitik': typeof CookiepolitikRoute
+  '/handelsbetingelser': typeof HandelsbetingelserRoute
+  '/kontakt': typeof KontaktRoute
+  '/om-os': typeof OmOsRoute
+  '/priser': typeof PriserRoute
+  '/privatlivspolitik': typeof PrivatlivspolitikRoute
+  '/ydelser': typeof YdelserRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cookiepolitik': typeof CookiepolitikRoute
+  '/handelsbetingelser': typeof HandelsbetingelserRoute
+  '/kontakt': typeof KontaktRoute
+  '/om-os': typeof OmOsRoute
+  '/priser': typeof PriserRoute
+  '/privatlivspolitik': typeof PrivatlivspolitikRoute
+  '/ydelser': typeof YdelserRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cookiepolitik'
+    | '/handelsbetingelser'
+    | '/kontakt'
+    | '/om-os'
+    | '/priser'
+    | '/privatlivspolitik'
+    | '/ydelser'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cookiepolitik'
+    | '/handelsbetingelser'
+    | '/kontakt'
+    | '/om-os'
+    | '/priser'
+    | '/privatlivspolitik'
+    | '/ydelser'
+  id:
+    | '__root__'
+    | '/'
+    | '/cookiepolitik'
+    | '/handelsbetingelser'
+    | '/kontakt'
+    | '/om-os'
+    | '/priser'
+    | '/privatlivspolitik'
+    | '/ydelser'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CookiepolitikRoute: typeof CookiepolitikRoute
+  HandelsbetingelserRoute: typeof HandelsbetingelserRoute
+  KontaktRoute: typeof KontaktRoute
+  OmOsRoute: typeof OmOsRoute
+  PriserRoute: typeof PriserRoute
+  PrivatlivspolitikRoute: typeof PrivatlivspolitikRoute
+  YdelserRoute: typeof YdelserRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookiepolitik': {
+      id: '/cookiepolitik'
+      path: '/cookiepolitik'
+      fullPath: '/cookiepolitik'
+      preLoaderRoute: typeof CookiepolitikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/handelsbetingelser': {
+      id: '/handelsbetingelser'
+      path: '/handelsbetingelser'
+      fullPath: '/handelsbetingelser'
+      preLoaderRoute: typeof HandelsbetingelserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/om-os': {
+      id: '/om-os'
+      path: '/om-os'
+      fullPath: '/om-os'
+      preLoaderRoute: typeof OmOsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/priser': {
+      id: '/priser'
+      path: '/priser'
+      fullPath: '/priser'
+      preLoaderRoute: typeof PriserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privatlivspolitik': {
+      id: '/privatlivspolitik'
+      path: '/privatlivspolitik'
+      fullPath: '/privatlivspolitik'
+      preLoaderRoute: typeof PrivatlivspolitikRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ydelser': {
+      id: '/ydelser'
+      path: '/ydelser'
+      fullPath: '/ydelser'
+      preLoaderRoute: typeof YdelserRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CookiepolitikRoute: CookiepolitikRoute,
+  HandelsbetingelserRoute: HandelsbetingelserRoute,
+  KontaktRoute: KontaktRoute,
+  OmOsRoute: OmOsRoute,
+  PriserRoute: PriserRoute,
+  PrivatlivspolitikRoute: PrivatlivspolitikRoute,
+  YdelserRoute: YdelserRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
